@@ -21,6 +21,10 @@
                     <Setter Property="Foreground"       Value="Green" />
                     <Setter Property="Background"       Value="White" />
                 </Trigger>
+                <Trigger Property="Text" Value="">
+                    <Setter Property="BorderThickness"  Value="1"/>
+                    <Setter Property="BorderBrush"      Value="Red" />
+                </Trigger>
             </Style.Triggers>
         </Style>
         <Style TargetType="{x:Type TextBox}" x:Key="optionalTextBoxInputStyle">
