@@ -37,6 +37,26 @@ namespace WpfApplicationTextBoxStyling
         {
             txtAddress.IsReadOnly       = !txtAddress.IsReadOnly;
             txtAddressLine2.IsReadOnly  = !txtAddressLine2.IsReadOnly;
+
+            SetFormLabels();
+            SetFormContent();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void SetFormLabels()
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void SetFormContent()
+        {
+            txtAddress.Text      = "Address Changed";
+            txtAddressLine2.Text = "Address2 Changed";
         }
     }
 }

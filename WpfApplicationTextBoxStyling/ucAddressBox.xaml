@@ -16,8 +16,8 @@
                 </ToolTip>
             </TextBox.ToolTip>
         </TextBox>
-        <Label x:Name="lblAddress" Content="Mandatory Text Box" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="121"/>
-        
+        <Label x:Name="lblAddress" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Mandatory Text Box" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="121"/>
+
         <Button x:Name="button" Content="Read Only Trigger" HorizontalAlignment="Left" Margin="131,125,0,0" VerticalAlignment="Top" Width="159" Click="button_Click"/>
 
         <TextBox x:Name="txtAddressLine2" Style="{StaticResource optionalTextBoxInputStyle}" Text="Optional Field" HorizontalAlignment="Left" Height="23" Margin="131,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
@@ -30,6 +30,6 @@
                 </ToolTip>
             </TextBox.ToolTip>
         </TextBox>
-        <Label x:Name="lblAddressLine2" Content="Optional Text Box" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="121"/>
+        <Label x:Name="lblAddressLine2" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Optional Text Box" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Width="121"/>
     </Grid>
 </UserControl>
