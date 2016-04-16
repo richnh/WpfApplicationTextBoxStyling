@@ -10,7 +10,7 @@
             <TextBox.ToolTip>
                 <ToolTip>
                     <StackPanel>
-                        <TextBlock Foreground="Green" FontWeight="Bold">Contact Details : Address</TextBlock>
+                        <TextBlock Style="{StaticResource tooltipTextBoxHeaderMandatory}" >Contact Details : Address</TextBlock>
                         <TextBlock>This field must be completed.</TextBlock>
                     </StackPanel>
                 </ToolTip>
@@ -24,7 +24,7 @@
             <TextBox.ToolTip>
                 <ToolTip>
                     <StackPanel>
-                        <TextBlock Foreground="Orange" FontWeight="Bold">Contact Details : Address Line 1</TextBlock>
+                        <TextBlock Style="{StaticResource tooltipTextBoxHeaderOptional}">Contact Details : Address Line 1</TextBlock>
                         <TextBlock>This field is not mandatory.</TextBlock>
                     </StackPanel>
                 </ToolTip>

@@ -39,7 +39,7 @@ namespace WpfApplicationTextBoxStyling
             txtAddressLine2.IsReadOnly  = !txtAddressLine2.IsReadOnly;
 
             SetFormLabels();
-            SetFormContent();
+           // SetFormContent();
         }
 
         /// <summary>

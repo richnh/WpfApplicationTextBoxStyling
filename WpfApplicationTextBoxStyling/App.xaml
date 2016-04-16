@@ -5,9 +5,10 @@
              StartupUri="MainWindow.xaml">
     
     <Application.Resources>
+        <!-- Text Box - Input Value - Required to progress -->
         <Style TargetType="{x:Type TextBox}" x:Key="mandatoryTextBoxInputStyle">
-            <Setter Property="FontFamily"  Value="Arial"/>
-            <Setter Property="FontSize"  Value="12"/>
+            <Setter Property="FontFamily"  Value="Cambria"/>
+            <Setter Property="FontSize"    Value="12"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsReadOnly"          Value="True">
@@ -19,16 +20,19 @@
                     <Setter Property="BorderThickness"  Value="1"/>
                     <Setter Property="BorderBrush"      Value="Green" />
                     <Setter Property="Foreground"       Value="Green" />
-                    <Setter Property="Background"       Value="White" />
+                    <Setter Property="Background"       Value="WhiteSmoke" />
                 </Trigger>
                 <Trigger Property="Text" Value="">
                     <Setter Property="BorderThickness"  Value="1"/>
                     <Setter Property="BorderBrush"      Value="Red" />
+                    <Setter Property="Background"       Value="Ivory" />
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Text Box - Input Value - Optional -->
         <Style TargetType="{x:Type TextBox}" x:Key="optionalTextBoxInputStyle">
-            <Setter Property="FontFamily"  Value="Arial"/>
+            <Setter Property="FontFamily"  Value="Cambria"/>
             <Setter Property="FontSize"  Value="12"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Style.Triggers>
@@ -45,10 +49,25 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Label - Sentinel Font -->
         <Style TargetType="{x:Type Label}" x:Key="mandatoryTextBoxLabelStyle">
-            <Setter Property="FontFamily"  Value="Helvetica"/>
-            <Setter Property="FontSize"  Value="12"/>
+            <Setter Property="FontFamily" Value="Cambria"/>
+            <Setter Property="FontSize"   Value="12"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
+        
+        <!-- Tool Tip - Input Text Box - Mandatory -->
+        <Style TargetType="{x:Type TextBlock}" x:Key="tooltipTextBoxHeaderMandatory">
+            <Setter Property="Foreground" Value="Green"/>
+            <Setter Property="FontWeight"   Value="Bold"/>
+        </Style>
+
+        <!-- Tool Tip - Input Text Box - Mandatory -->
+        <Style TargetType="{x:Type TextBlock}" x:Key="tooltipTextBoxHeaderOptional">
+            <Setter Property="Foreground" Value="Orange"/>
+            <Setter Property="FontWeight"   Value="Bold"/>
+        </Style>
+ 
     </Application.Resources>
 </Application>

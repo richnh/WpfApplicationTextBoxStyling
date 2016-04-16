@@ -6,9 +6,57 @@
         xmlns:local="clr-namespace:WpfApplicationTextBoxStyling"
         xmlns:ucContact="WpfApplicationTextBoxStyling.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="419" Width="525">
     <Grid>
-        <local:ucAddressBox HorizontalAlignment="Left" Margin="90,130,0,0" VerticalAlignment="Top" Width="313"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="Expander">
+                    <Style.Resources>
+                        <LinearGradientBrush x:Key="BackBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="LightGray" Offset="0.1" />
+                            <GradientStop Color="LightGray" Offset="0.9" />
+                        </LinearGradientBrush>
+                     
+                    </Style.Resources>
+                    <Setter Property="Background" Value="{StaticResource BackBrush}"/>
+                </Style>
+            </StackPanel.Resources>
+            <Expander Header="Details" FontFamily="Cambria" BorderBrush="DarkGray" BorderThickness="1" > 
+                <Grid Grid.Row="0">
+                    <TextBox x:Name="txtCustomerRef" Style="{StaticResource mandatoryTextBoxInputStyle}" IsReadOnly="True" Text="Ref" HorizontalAlignment="Left" Height="23" Margin="131,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
+                        <TextBox.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource tooltipTextBoxHeaderMandatory}" ><Run Text="Ref"/></TextBlock>
+                                    <TextBlock><Run Text="This field must be completed."/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                    </TextBox>
+                    <Label x:Name="lblAddress" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Ref" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="121"/>
+                    <TextBox x:Name="txtRef" Style="{StaticResource mandatoryTextBoxInputStyle}"  IsReadOnly="True" Text="Ref Name" HorizontalAlignment="Left" Height="23" Margin="131,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
+                        <TextBox.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource tooltipTextBoxHeaderMandatory}" ><Run Text="Name"/></TextBlock>
+                                    <TextBlock><Run Text="Name Text"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                    </TextBox>
+                    <Label x:Name="lblCompanyName" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Name" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="121"/>
+                </Grid>
+            </Expander>
+            <Grid Grid.Row="1">
+                <local:ucAddressBox HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="313"/>
+            </Grid>
+        </StackPanel>
 
     </Grid>
 </Window>
