@@ -19,17 +19,34 @@
                 <Style TargetType="Expander">
                     <Style.Resources>
                         <LinearGradientBrush x:Key="BackBrush" StartPoint="0.5,0" EndPoint="0.5,1">
-                            <GradientStop Color="LightGray" Offset="0.1" />
-                            <GradientStop Color="LightGray" Offset="0.9" />
+                            <GradientStop Color="White" Offset="0.1" />
+                            <GradientStop Color="White" Offset="0.9" />
                         </LinearGradientBrush>
-                     
+
                     </Style.Resources>
                     <Setter Property="Background" Value="{StaticResource BackBrush}"/>
                 </Style>
             </StackPanel.Resources>
-            <Expander Header="Details" FontFamily="Cambria" BorderBrush="DarkGray" BorderThickness="1" > 
-                <Grid Grid.Row="0">
-                    <TextBox x:Name="txtCustomerRef" Style="{StaticResource mandatoryTextBoxInputStyle}" IsReadOnly="True" Text="Ref" HorizontalAlignment="Left" Height="23" Margin="131,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
+            <Expander FontFamily="Cambria" BorderBrush="DarkGray" BorderThickness="1" >
+                <Expander.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <Image Width="30" Source="C:\\info-icon-master.png"/>
+                            <TextBlock Style="{StaticResource tooltipTextBoxHeaderMandatory}">Click to expand Customer Details</TextBlock>
+                            <TextBlock>Shows Customer Ref, Company Name ...</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Expander.ToolTip>
+                <Expander.Header>
+
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Image Width="50" Source="C:\\customer-icon-smaller.png"/>
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+                </Expander.Header>
+                <Grid Grid.Row="0" Height="200">
+                    <TextBox x:Name="txtCompanyName" Style="{StaticResource mandatoryTextBoxInputStyle}" IsReadOnly="True" Text="Company Name" HorizontalAlignment="Left" Height="23" Margin="97,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
                         <TextBox.ToolTip>
                             <ToolTip>
                                 <StackPanel>
@@ -39,8 +56,10 @@
                             </ToolTip>
                         </TextBox.ToolTip>
                     </TextBox>
-                    <Label x:Name="lblAddress" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Ref" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="121"/>
-                    <TextBox x:Name="txtRef" Style="{StaticResource mandatoryTextBoxInputStyle}"  IsReadOnly="True" Text="Ref Name" HorizontalAlignment="Left" Height="23" Margin="131,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
+                    <Image Width="50" Source="C:\\contact-icon.jpg" Margin="15,0,450,142"/>
+                    <!--<Label x:Name="lblAddress" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Ref" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="121"/>-->
+                    <Image Source="C:\\address.png" Margin="21,39,452,118" RenderTransformOrigin="-2.557,-0.059"/>
+                    <TextBox x:Name="txtRef" Style="{StaticResource mandatoryTextBoxInputStyle}"  IsReadOnly="True" Text="Address" HorizontalAlignment="Left" Height="23" Margin="97,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
                         <TextBox.ToolTip>
                             <ToolTip>
                                 <StackPanel>
@@ -50,7 +69,29 @@
                             </ToolTip>
                         </TextBox.ToolTip>
                     </TextBox>
-                    <Label x:Name="lblCompanyName" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Name" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="121"/>
+                    <Image Source="C:\\email.png" Margin="25,75,456,82" RenderTransformOrigin="-2.557,-0.059"/>
+                    <TextBox x:Name="txtRef_Copy" Style="{StaticResource mandatoryTextBoxInputStyle}"  IsReadOnly="True" Text="Email" HorizontalAlignment="Left" Height="23" Margin="97,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
+                        <TextBox.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource tooltipTextBoxHeaderMandatory}" ><Run Text="Name"/></TextBlock>
+                                    <TextBlock><Run Text="Name Text"/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                    </TextBox>
+                    <TextBox x:Name="txtCustomerRef" Style="{StaticResource mandatoryTextBoxInputStyle}" IsReadOnly="True" Text="Customer Ref" HorizontalAlignment="Left" Height="23" Margin="98,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159">
+                        <TextBox.ToolTip>
+                            <ToolTip>
+                                <StackPanel>
+                                    <TextBlock Style="{StaticResource tooltipTextBoxHeaderMandatory}" ><Run Text="Ref"/></TextBlock>
+                                    <TextBlock><Run Text="This field must be completed."/></TextBlock>
+                                </StackPanel>
+                            </ToolTip>
+                        </TextBox.ToolTip>
+                    </TextBox>
+                    <Image Source="C:\\customer-ref.png" Margin="23,123,454,39"/>
+                    <!--<Label x:Name="lblCompanyName" Style="{StaticResource mandatoryTextBoxLabelStyle}" Content="Name" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="121"/>-->
                 </Grid>
             </Expander>
             <Grid Grid.Row="1">

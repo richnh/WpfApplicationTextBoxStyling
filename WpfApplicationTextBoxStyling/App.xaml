@@ -68,6 +68,12 @@
             <Setter Property="Foreground" Value="Orange"/>
             <Setter Property="FontWeight"   Value="Bold"/>
         </Style>
- 
+
+        <!-- Tool Tip - Input Text Box - Mandatory -->
+        <Style TargetType="{x:Type TextBlock}" x:Key="tooltipTextBoxHeaderInfo">
+            <Setter Property="Foreground" Value="DarkGray"/>
+            <Setter Property="FontWeight"   Value="Bold"/>
+        </Style>
+
     </Application.Resources>
 </Application>
