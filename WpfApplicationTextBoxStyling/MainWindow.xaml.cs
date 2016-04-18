@@ -24,5 +24,21 @@ namespace WpfApplicationTextBoxStyling
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtboxSelectedItem.Text = string.Format("{0}", listBox.Items.IndexOf(sender) );
+
+            object oItem = listBox.Items.GetItemAt(listBox.Items.IndexOf(sender));
+
+            ListViewItem lvItem = (ListViewItem)oItem;
+
+            txtboxSelectedContent.Text = (string)lvItem.Content;
+        }
     }
 }
